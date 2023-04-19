@@ -33,22 +33,73 @@ Write the detailed procedure here
 
 
 ## Program:
-/*
+```
 Program to design a half subtractor and full subtractor circuit and verify its truth table in quartus using Verilog programming.
-Developed by: 
-RegisterNumber:  
-*/
+Developed by: Shankar Saradha   
+RegisterNumber: 212221240052
+```
+
+``` python 
+HALF SUBTRACTOR
+
+module HalfSubtractor(A,B,Diff,Borrow);
+input A,B;
+output Diff,Borrow;
+wire x;
+xor (Diff, A,B);
+not(x,A);
+and(Borrow,x,B);
+endmodule
+
+FULL SUBTRACTOR
+
+module FullSubtractor(A,B,C,Diff,Borrow);
+input A,B,C;
+output Diff,Borrow;
+wire p;
+assign Diff = ((A^B)^C);
+not(p,A);
+assign Borrow = ((p&B)|(p&C)|(B&C));
+endmodule
+```
+
 
 ## Output:
+## Half Subtractor
+## Gates
+![d](https://user-images.githubusercontent.com/93978702/233147243-d2455bf6-1154-4336-9637-c97d208b7610.png)
 
 ## Truthtable
+![e](https://user-images.githubusercontent.com/93978702/233147314-bb1d2392-9aba-4b36-ae9b-6b629025487f.png)
 
 
 
 ##  RTL realization
+![f](https://user-images.githubusercontent.com/93978702/233147338-1709af3b-167b-4c79-8ff6-b04ecd058aa7.png)
 
 
 ## Timing diagram 
+![g](https://user-images.githubusercontent.com/93978702/233147376-9f4d9083-8827-494e-ba7a-3d65fa19dd2b.png)
+## Full Subtractor 
+## Gates
+![h](https://user-images.githubusercontent.com/93978702/233148020-6c3b5e03-1e70-4dca-9d9e-25bd555e4e7a.png)
+
+
+## Truthtable
+![i](https://user-images.githubusercontent.com/93978702/233148045-95e5d53a-3255-4b2b-8365-c429b8bdd66d.png)
+
+
+
+
+##  RTL realization
+![j](https://user-images.githubusercontent.com/93978702/233148060-4f678f71-5d49-4fcb-8495-842e6ccf2714.png)
+
+
+
+## Timing diagram 
+![k](https://user-images.githubusercontent.com/93978702/233148071-d852a68b-9525-49a4-a99c-3476a5b54a9b.png)
+
+
 
 ## Result:
 Thus the half subtractor and full subtractor circuits are designed and the truth tables is verified using quartus software.
